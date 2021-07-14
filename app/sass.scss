@@ -1,0 +1,439 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+// CSS Variables
+$font-stack: 'Roboto', 'Helvetica', sans-serif;
+$background-color: #FBFBFB;
+$primary-color: #fbefdf;
+$secondary-color: #c2a693;
+$tertiary-color: #f9dbb6;
+
+// General Styling
+body {
+  font-family: $font-stack;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: $background-color;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.7;
+}
+
+a {
+  cursor: pointer;
+} 
+
+h1 {
+  font-size: 2.2vw;
+  font-weight: 800;
+  letter-spacing:8px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+
+h3 {
+  font-size: 1.2vw;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn-primary {
+  margin: 5px 10px 0 10px;
+  padding: 3px 11px;
+  border-radius: 15px;
+  background-color: transparent;
+}
+
+.btn-secondary {
+  margin: 5px 10px 0 10px;
+  padding: 3px 11px;
+  border-radius: 15px;
+  background-color: black;
+  color: white;
+}
+
+button.btn-primary:hover {
+  background-color: $tertiary-color;
+  cursor: pointer;
+}
+
+button.btn-secondary:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+#header-2 {
+  display: none;
+}
+
+#dropdown {
+  display: none;
+}
+
+.cta-primary-color {
+  background-color: $primary-color;
+}
+
+.cta-secondary-color {
+  background-color: $secondary-color;
+}
+
+.cta-text-padding {
+  padding: 0 6vw;
+}
+
+// Alternate styling for basic styles
+@media only screen and (max-width: 1000px){
+  h1 {
+    font-size: 3.5vw;
+  }
+
+  h3 {
+    font-size: 2.5vw;
+  }
+
+} 
+
+// Alternate styling for smartphones
+@media only screen and (max-width: 400px){
+  
+  h1 {
+    font-size: 5vw;
+  }
+
+  h3 {
+    font-size: 4vw;
+  }
+
+}
+
+// Styling For the Header
+header {
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  background-color: white;
+  border-bottom-style: outset;
+
+
+  div {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 25px;
+    
+    a {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 19px 20px;
+    }
+
+    a:hover {
+      color: $secondary-color;
+      cursor: pointer; 
+    }
+
+    img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+// Targets the map icon.
+header div:nth-child(2) img{
+  height:17px;
+  width: 17px;
+  margin: 0 5px;
+}
+
+header div:nth-child(2) a{
+  font-weight: 400;
+}
+
+// Alternate header styles for smaller screens
+@media only screen and (max-width: 1000px){
+  #header-1 {
+    display: none;
+  }
+
+  #header-2 {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    
+    div {
+      padding: 0 2vw;
+    }
+
+    img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  #dropdown {
+    display:flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    height: 80vh;
+    width: 80vw;
+    left: 20vw;
+    padding: 7vw;
+
+    a {
+      font-size: 18px;
+      margin: 10px;
+    }
+
+    a:hover {
+      color: $tertiary-color
+    }
+
+    button {
+      margin: 10px 0;
+    }
+
+    button:first-child {
+      margin-right: 10px;
+    }
+
+    div {
+      margin: 10px 0;
+
+      img {
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+
+//Basic format for the call to actions
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 0;
+  width: 100vw;
+}
+
+.cta-cont {
+  width: 50vw;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#cta2, #cta3 {
+  height: 55vh;
+}
+
+// Alternate call to action styling for smaller screens.
+@media only screen and (max-width: 1000px){
+  .cta {
+    flex-direction: column;
+  }
+}
+
+//Specific styling for call to action #1
+#cta1 {
+  height: 45vh;
+}
+
+#cta1 .cta-cont {
+ height: 100%; 
+}
+
+#cta1 .cta-cont img {
+  height: 100%; 
+  width: 50vw;
+ }
+
+// Alternate styling for CTA #1
+@media only screen and (max-width: 1000px){
+ #cta1 {
+   height: 90vh;
+ }
+
+ #cta1 .cta-cont {
+  height: 50%; 
+ }
+
+ #cta1 .cta-cont img {
+  width: 100vw;
+ }
+}
+
+//Specific styling for call to action #2
+#cta2 .cta-cont {
+  height: 100%;
+}
+
+#cta2 .cta-cont img {
+  height: 100%; 
+  width: 50vw;
+ }
+
+// Alternate styling for CTA #2
+@media only screen and (max-width: 1000px){
+  #cta2 {
+    height: 90vh;
+  }
+ 
+  #cta2 .cta-cont {
+   height: 50%; 
+  }
+ 
+  #cta2 .cta-cont img {
+   width: 100vw;
+  }
+ }
+ 
+// Specific styling for call to action #3
+#cta3 .cta-cont {
+  height: 100%;
+}
+
+#cta3 .cta-cont img {
+  height: 100%; 
+  width: 50vw;
+ }
+// Alternate styling for CTA #3
+@media only screen and (max-width: 1000px){
+  #cta3 {
+    height: 100vh;
+  }
+ 
+  #cta3 .cta-cont {
+   height: 50%; 
+  }
+ 
+  #cta3 .cta-cont img {
+   width: 100vw;
+  }
+ }
+
+// Specific styling for call to action #4
+#cta4 {
+  height: 45vh;
+}
+
+#cta4 img {
+  height: 45vh;
+  width: 50vw;
+}
+
+// Alternate styling for CTA #4
+@media only screen and (max-width: 1000px){
+  #cta4 {
+    height: 90vh;
+  }
+ 
+  #cta4 .cta-cont {
+   height: 45vh; 
+  }
+ 
+  #cta4 .cta-cont img {
+   width: 100vw;
+   
+  }
+ }
+// Specific styling for the footer
+footer {
+  display: flex;
+  justify-content: space-around;
+  border-top-style: outset;
+  border-bottom-style: inset;
+
+}
+
+.list-header {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+footer div ul a li {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 3;
+}
+
+footer div ul a {
+  color: grey;
+  cursor: pointer;
+}
+
+footer div ul a:hover {
+  color: black;
+}
+
+// Social Media Icons Styling
+#social-media-icons {
+  font-size: 30px;
+  text-align: center;
+}
+
+#social-media-icons i {
+  margin: 30px 10px;
+}
+
+#social-media-icons a:hover {
+ opacity: 70%;
+ cursor: pointer;
+}
+
+// Terms and Use Styling
+#conditions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+#conditions a {
+  padding: 0 20px;
+}
+
+#conditions a:nth-child(-n + 3) {
+  border-right: solid;
+  border-right-width: thin;
+  border-color: lightgrey;
+}
+
+#conditions a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#copyright {
+  text-align: center;
+}
+
+// Alternative Styling for footer and terms and use.
+@media only screen and (max-width: 400px){
+  footer div:last-child {
+    display: none;
+  }
+
+ footer ul {
+   padding-inline-start: 5px;
+   padding-inline-end: 5px;
+   margin-inline-start: 0;
+   margin-inline-end: 0;
+ }
+
+  #conditions a:last-child {
+    display: none;
+  }
+}
